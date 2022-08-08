@@ -1,5 +1,13 @@
 ## content_based_recommender_system_for_social_network
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![catboost](https://img.shields.io/badge/catboost-yellow?style=for-the-badge&logo=appveyor)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+![SQLAlchemy](https://img.shields.io/badge/-sqlalchemy-red?style=for-the-badge&logo=appveyor)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+
 ***Финальный проект с курса START ML школы [Karpov.Courses](https://karpov.courses/)***
 
 > **Главная задача проекта:** построить рекомендательную систему, которая 
@@ -22,11 +30,6 @@
 
 5. Написание сервиса: загрузка модели -> получение признаков для модели по user_id -> предсказание постов, которые лайкнут -> возвращение ответа.
 
-Стек, используемый при написании проекта:
-+
-+
-+
-+
 ___________________________________________
 
 #### **Структура проекта**
@@ -51,16 +54,41 @@ ___________________________________________
 
 ![img](https://sun9-83.userapi.com/impg/ApsVGlL5COpZIMMiTJNND_D_pb4qz_b9UswLFg/otQpMcK4kUo.jpg?size=190x216&quality=95&sign=8485ffdd633d15fc7a80c971402a4c0b&type=album)
 
+|Field name|	Overview|
+|----------|----------|
+age|Возраст пользователя (в профиле)
+city|	Город пользователя (в профиле)
+country|	Страна пользователя (в профиле)
+exp_group|	Экспериментальная группа: некоторая зашифрованная категория
+gender|	Пол пользователя
+id|	Уникальный идентификатор пользователя
+os|	Операционная система устройства, с которого происходит пользование соц.сетью
+source|	Пришел ли пользователь в приложение с органического трафика или с рекламы
+
 > Таблица `post` содержит данные о постах
 
 ![img2](https://sun9-66.userapi.com/impg/MFYVqytBlaamDmICWdlkFT5Q-eUwK4xSpW2ELw/utDw0DLjwk4.jpg?size=107x100&quality=95&sign=3c28810fff10277548dfabeef4773d59&type=album)
 
+
+|Field name|	Overview|
+|----------|----------|
+id|	Уникальный идентификатор поста
+text|	Текстовое содержание поста
+topic|	Основная тематика
+
 > Таблица `feed_action` содержит данные о взаимодействии пользователей с постами
 
 ![img3](https://sun9-81.userapi.com/impg/SKb6hnQjYFHQlQJL9kDdlsrpjsyLWSEKZ4Nj8A/9GH7iPfU_JM.jpg?size=285x117&quality=95&sign=d5b86fd87679b2392dc43d481396e8fa&type=album)
+
+|Field name|	Overview|
+|----------|----------|
+timestamp|	Время, когда был произведен просмотр
+user_id|	id пользователя, который совершил просмотр
+post_id|	id просмотренного поста
+action|	Тип действия: просмотр или лайк
 ___________________________________________
 
-#### Техническая спецификация
+#### Техническая спецификация API
 `Endpoint GET /post/recommendations/`
 
 **Parameters**
@@ -85,10 +113,4 @@ limit	| Количество постов для юзера
 }, 
 ...]
 ```
-______________________________________
 
-#### **Содержание app.py**
-
-1.
-2.
-3.
